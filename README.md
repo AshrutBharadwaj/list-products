@@ -33,8 +33,8 @@ Vite – Build tool and dev server
 
 Clone the Repo & Install Dependencies
 
- - git clone https://github.com/your-username/product-listing-app.git
- - cd product-listing-app
+ - git clone https://github.com/AshrutBharadwaj/product-listing-app.git
+ - cd list-products/product-listing-app
  - npm install
 
 Start the App
