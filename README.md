@@ -63,7 +63,7 @@ You can deploy the dist/ folder to any static hosting service like Vercel, Netli
 
 📦 API Used
 
-Fake Store API – Provides dummy product data ('https://fakestoreapi.com/products')
+Fake Store API – Provides dummy product data ('https://dummyjson.com/products')
 
 
 📁 Project Structure
