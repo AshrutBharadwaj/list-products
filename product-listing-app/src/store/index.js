@@ -51,8 +51,8 @@ export default createStore({
       };
 
       try {
-        const res = await axios.get('https://fakestoreapi.com/products');
-        let data = res.data;
+        const res = await axios.get('https://dummyjson.com/products');
+        let data = res.data.products;
 
         // Apply filters manually since Fake Store API doesn't support all of them
         if (state.filters.search) {
@@ -62,7 +62,7 @@ export default createStore({
         }
 
         if (state.filters.inStockOnly) {
-          data = data.filter(product => product.rating.count > 0); // assuming rating.count > 0 = in stock
+          data = data.filter(product => product.availabilityStatus === 'In Stock'); // assuming rating.count > 0 = in stock
         }
 
         const paginated = data.slice((state.page - 1) * state.limit, state.page * state.limit);

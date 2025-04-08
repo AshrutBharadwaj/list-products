@@ -138,3 +138,7 @@ label {
 .card-stock.out-of-stock {
     color: #ef4444;
 }
+
+.card-stock.low-in-stock {
+    color: #f2ba39;
+}
