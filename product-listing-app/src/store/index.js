@@ -1,5 +1,5 @@
-import { createStore } from 'vuex';
-import axios from 'axios';
+import { createStore } from "vuex";
+import axios from "axios";
 
 export default createStore({
   state: {
@@ -10,10 +10,10 @@ export default createStore({
     limit: 10,
     hasMore: true,
     filters: {
-      search: '',
-      sort: 'asc',
-      inStockOnly: false
-    }
+      search: "",
+      sort: "asc",
+      inStockOnly: false,
+    },
   },
   mutations: {
     setLoading(state, payload) {
@@ -35,44 +35,49 @@ export default createStore({
     },
     incrementPage(state) {
       state.page++;
-    }
+    },
   },
   actions: {
     async fetchProducts({ commit, state }) {
-      commit('setLoading', true);
-      commit('setError', null);
+      commit("setLoading", true);
+      commit("setError", null);
 
       const params = {
         _page: state.page,
         _limit: state.limit,
         q: state.filters.search,
-        _sort: 'price',
-        _order: state.filters.sort
+        _sort: "price",
+        _order: state.filters.sort,
       };
 
       try {
-        const res = await axios.get('https://dummyjson.com/products');
+        const res = await axios.get("https://dummyjson.com/products");
         let data = res.data.products;
-
-        // Apply filters manually since Fake Store API doesn't support all of them
         if (state.filters.search) {
-          data = data.filter(product =>
-            product.title.toLowerCase().includes(state.filters.search.toLowerCase())
+          data = data.filter((product) =>
+            product.title
+              .toLowerCase()
+              .includes(state.filters.search.toLowerCase())
           );
         }
 
         if (state.filters.inStockOnly) {
-          data = data.filter(product => product.availabilityStatus === 'In Stock'); // assuming rating.count > 0 = in stock
+          data = data.filter(
+            (product) => product.availabilityStatus === "In Stock"
+          );
         }
 
-        const paginated = data.slice((state.page - 1) * state.limit, state.page * state.limit);
-        commit('setProducts', paginated);
-        commit('incrementPage');
+        const paginated = data.slice(
+          (state.page - 1) * state.limit,
+          state.page * state.limit
+        );
+        commit("setProducts", paginated);
+        commit("incrementPage");
       } catch (error) {
-        commit('setError', 'Failed to fetch products.');
+        commit("setError", "Failed to fetch products.");
       } finally {
-        commit('setLoading', false);
+        commit("setLoading", false);
       }
-    }
-  }
+    },
+  },
 });
