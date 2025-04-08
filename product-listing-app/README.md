@@ -8,6 +8,7 @@ A sleek and dynamic web application for browsing products from a public API. Fea
 
 
 
+
 ✨ Tech Stack
 
 Vue 3 – Progressive JavaScript Framework
@@ -18,41 +19,52 @@ Axios – For HTTP Requests
 
 Vite – Build tool and dev server
 
+
+
+
+
 ✨ Features
 
 ✅ Product Cards with image, name, price, and availability✅ Infinite Scroll with IntersectionObserver✅ Search by Product Name✅ Sort by Price (Ascending/Descending)✅ Toggle to show only In-Stock products✅ Responsive Grid Layout
+
+
 
 🛠️ Getting Started
 
 Clone the Repo & Install Dependencies
 
-git clone https://github.com/your-username/product-listing-app.git
-cd product-listing-app
-npm install
+ - git clone https://github.com/your-username/product-listing-app.git
+ - cd product-listing-app
+ - npm install
 
 Start the App
 
-npm run dev
+ - npm run dev
 
 Open your browser to:
 
-http://localhost:5173
+ - http://localhost:5173
+
 
 🌐 Deployment
 
 To build for production:
 
-npm run build
+ - npm run build
 
 To preview the production build locally:
 
-npm run preview
+ - npm run preview
 
 You can deploy the dist/ folder to any static hosting service like Vercel, Netlify, or GitHub Pages.
 
+
+
+
 📦 API Used
 
-Fake Store API – Provides dummy product data
+Fake Store API – Provides dummy product data ('https://fakestoreapi.com/products')
+
 
 📁 Project Structure
 
@@ -67,6 +79,7 @@ src/
 ├── router/
 │   └── index.js
 └── App.vue
+
 
 🙌 Author
 
