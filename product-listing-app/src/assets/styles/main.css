@@ -141,20 +141,23 @@ label {
 
 .card-stock {
   font-size: 0.9rem;
-  color: #10b981;
+  color: #2d6900;
+  font-weight: bold;
+  float: right;
 }
 
 .card-stock.out-of-stock {
-  color: #ef4444;
+  color: #870000;
 }
 
 .card-stock.low-in-stock {
-  color: #f2ba39;
+  color: #836500;
 }
 
 .product-card {
   background: #ffffff63;
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.4s ease;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -197,7 +200,7 @@ img.loaded {
   font-weight: 600;
 }
 .price {
-  color: #28a745;
+  color: #006116;
   font-weight: bold;
 }
 #app {
@@ -206,7 +209,7 @@ img.loaded {
 .header {
   display: inline-flex;
 }
-.logo { 
+.logo {
   height: 5em;
   margin-bottom: 2em;
   width: auto;
