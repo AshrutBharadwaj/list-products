@@ -1,6 +1,6 @@
 <template>
   <transition name="fade-scale">
-    <div class="product-card">
+    <div class="product-card" v-show="loaded">
       <div class="image-wrapper">
         <img
           :src="product.thumbnail"
